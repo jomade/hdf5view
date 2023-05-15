@@ -65,6 +65,12 @@ class TreeModel(QStandardItemModel):
             tree_item.setIcon(QIcon('icons:folder.svg'))
             dataset_item = QStandardItem('')
 
+        elif isinstance(node, h5py.Datatype):
+            tree_item.setIcon(QIcon('icons:dataset.svg'))
+            dataset_item = QStandardItem(str(node.dtype))
+        else:
+            print("Could not identify node type!")
+
         dataset_item.setForeground(QBrush((Qt.darkGray)))
 
         parent_item.appendRow([tree_item, attrs_item, dataset_item])
