@@ -26,8 +26,8 @@ from qtpy.QtWidgets import (
     QApplication,
 )
 
-from . import __version__
-from .mainwindow import MainWindow
+from hdf5view import __version__
+from hdf5view.mainwindow import MainWindow
 
 
 # def my_excepthook(e_type, value, tb):
